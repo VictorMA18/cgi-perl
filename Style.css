@@ -3,3 +3,13 @@ body {
     background-color: #37cdd8;
     margin: 0;
 }
+.nombre {
+    background: black;
+}
+.nombre h4{
+    margin: 50px;
+    padding: 25px;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+}
