@@ -70,7 +70,7 @@ sub resolver {
     return $operacion;
 }
 
-open my $archivoHTML, '<', '../htdocs/Calculadora.html';    # Se abre el archivo "Calculadora.html" en modo de lectura
+open my $archivoHTML, '<', 'Calculadora.html';    # Se abre el archivo "Calculadora.html" en modo de lectura
 my @archivoHTML = <$archivoHTML>;   # Cada línea del archivo se almacena como un elemento del array
 close $archivoHTML;
 
@@ -82,8 +82,7 @@ for my $line (@archivoHTML) {
     }
 }
 
-open my $archivoHTML, '>', '../htdocs/Calculadora.html';    # Se abre nuevamente el archivo "Calculadora.html" en modo de escritura
+open my $archivoHTML, '>', 'Calculadora.html';    # Se abre nuevamente el archivo "Calculadora.html" en modo de escritura
 print $archivoHTML @archivoHTML;    # El contenido modificado del archivo, almacenado en @archivoHTML, se imprime de nuevo en el archivo
 close $archivoHTML;
-
 print $cgi->redirect('http://localhost/Calculadora.html');  # Se redirecciona a la misma página Web local
