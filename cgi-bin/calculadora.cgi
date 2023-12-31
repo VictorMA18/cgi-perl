@@ -22,4 +22,5 @@ if ($numero1 !~ /^[0-9]+$/ or $numero2 !~ /^[0-9]+$/) {
         $resultado = $numero1 - $numero2;
         print 'El resultado de la resta es: ' . $resultado;
     }
+    
 }
