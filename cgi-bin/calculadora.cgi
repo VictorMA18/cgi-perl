@@ -18,5 +18,8 @@ if ($numero1 !~ /^[0-9]+$/ or $numero2 !~ /^[0-9]+$/) {
     if ($operacion eq 'sumar') {
         $resultado = $numero1 + $numero2;
         print 'El resultado de la suma es: ' . $resultado;
+    }elsif ($operacion eq 'restar') {
+        $resultado = $numero1 - $numero2;
+        print 'El resultado de la resta es: ' . $resultado;
     }
 }
