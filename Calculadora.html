@@ -2,53 +2,41 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 <body>
     <div class="nombre">
-        <h4>Lab08 Calculadora: Victor Mamani Anahua</h4>
+        <h4>Lab08 - Calculadora : Mamani Anahua Victor</h4>
     </div>
-    <div class="calc">
-        <form action="/cgi-bin/calculadora.cgi" method="Post">
-            <table>
-                <tr>
-                    <td class="entrada" colspan="4"><input type="text" name="operacion" value=''><hr class="line"></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="accion" value="("></td>
-                    <td><input type="submit" name="accion" value=")"></td>
-                    <td><input type="submit" name="accion" value="%"></td>
-                    <td><input type="submit" name="accion" value="AC"></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="accion" value="7"></td>
-                    <td><input type="submit" name="accion" value="8"></td>
-                    <td><input type="submit" name="accion" value="9"></td>
-                    <td><input type="submit" name="accion" value="÷"></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="accion" value="4"></td>
-                    <td><input type="submit" name="accion" value="5"></td>
-                    <td><input type="submit" name="accion" value="6"></td>
-                    <td><input type="submit" name="accion" value="×"></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="accion" value="1"></td>
-                    <td><input type="submit" name="accion" value="2"></td>
-                    <td><input type="submit" name="accion" value="3"></td>
-                    <td><input type="submit" name="accion" value="-"></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="accion" value="0"></td>
-                    <td><input type="submit" name="accion" value="."></td>
-                    <td><input type="submit" name="submit" value="="></td>
-                    <td><input type="submit" name="accion" value="+"></td>
-                </tr>
-            </table>
-            <input type="hidden" name="controlR" value=''>
+    <div class="Calculadora">
+        <form method="post" action="cgi-bin/calculadora.cgi">
+            <div class="botones">
+                <label for="numero1">Ingrese el 1er número :</label>
+                <br>
+                <input type="text" name="numero1" class="numero2">
+            </div>
+            <br>
+            <div class="botones">
+                <label for="operacion">Tipo de operacion:</label>
+                <br>
+                <select name="operacion" class="numero2">
+                    <option value="sumar">+</option>
+                    <option value="restar">-</option>
+                    <option value="multiplicar">*</option>
+                    <option value="dividir">/</option>
+                </select>
+            </div>
+            <br>
+            <div class="botones">
+                <label for="numero2">Ingrese el 2do número:</label>
+                <br>
+                <input type="text" name="numero2" class="numero2">
+            </div>
+            <div class="botones">
+                <input type="submit" value="Calcular" class="calcular">
+            </div>
         </form>
-    </div>   
+    </div>  
 </body>
 </html>
