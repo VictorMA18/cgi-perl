@@ -22,5 +22,14 @@ if ($numero1 !~ /^[0-9]+$/ or $numero2 !~ /^[0-9]+$/) {
         $resultado = $numero1 - $numero2;
         print 'El resultado de la resta es: ' . $resultado;
     }
-    
+    elsif ($operacion eq 'dividir') {
+        if ($numero2 != 0) {
+            $resultado = $numero1 / $numero2;
+            print 'El resultado de la division es: ' . $resultado;
+        } else {
+            print 'No es posible dividir por cero.';
+        }
+    } else {
+        print 'Operación no válida.';
+    } 
 }
