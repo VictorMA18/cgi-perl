@@ -4,72 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-    <div class="Calculadora">
-        <section class="pantalla">
-            0
-        </section>
-        <section class="botones">
-            <div class="Calculadora-botones-fila">
-                <button class="Calculadora-botones">
-                    ←
-                </button>
-                <button class="Calculadora-botones">
-                    &divide;
-                </button>
-            </div>
-            <div class="Calculadora-botones-fila">
-                <button class="Calculadora-botones">
-                    7
-                </button>
-                <button class="Calculadora-botones">
-                    8
-                </button>
-                <button class="Calculadora-botones">
-                    9
-                </button>
-                <button class="Calculadora-botones">
-                    &times;
-                </button>
-            </div>
-            <div class="Calculadora-botones-fila">
-                <button class="Calculadora-botones">
-                    4
-                </button>
-                <button class="Calculadora-botones">
-                    5
-                </button>
-                <button class="Calculadora-botones">
-                    6
-                </button>
-                <button class="Calculadora-botones">
-                    &minus;
-                </button>
-            </div>
-            <div class="Calculadora-botones-fila">
-                <button class="Calculadora-botones">
-                    1
-                </button>
-                <button class="Calculadora-botones">
-                    2
-                </button>
-                <button class="Calculadora-botones">
-                    3
-                </button>
-                <button class="Calculadora-botones">
-                    &plus;
-                </button>
-            </div>
-            <div class="Calculadora-botones-fila">
-                <button class="Calculadora-botones">
-                    0
-                </button>
-                <button class="Calculadora-botones">
-                    &equals;
-                </button>
-            </div>
-        </section>
+    <div class="nombre">
+        <h4>Lab08 Calculadora: Victor Mamani Anahua</h4>
     </div>
+    <div class="calc">
+        <form action=" " method="">
+            <table>
+                <tr>
+                    <td class="entrada" colspan="4"><input type="text" name="operacion" value='0'><hr class="line"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="accion" value="("></td>
+                    <td><input type="submit" name="accion" value=")"></td>
+                    <td><input type="submit" name="accion" value="%"></td>
+                    <td><input type="submit" name="accion" value="AC"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="accion" value="7"></td>
+                    <td><input type="submit" name="accion" value="8"></td>
+                    <td><input type="submit" name="accion" value="9"></td>
+                    <td><input type="submit" name="accion" value="÷"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="accion" value="4"></td>
+                    <td><input type="submit" name="accion" value="5"></td>
+                    <td><input type="submit" name="accion" value="6"></td>
+                    <td><input type="submit" name="accion" value="×"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="accion" value="1"></td>
+                    <td><input type="submit" name="accion" value="2"></td>
+                    <td><input type="submit" name="accion" value="3"></td>
+                    <td><input type="submit" name="accion" value="-"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="accion" value="0"></td>
+                    <td><input type="submit" name="accion" value="."></td>
+                    <td><input type="submit" name="submit" value="="></td>
+                    <td><input type="submit" name="accion" value="+"></td>
+                </tr>
+            </table>
+            <input type="hidden" name="controlR" value=''>
+        </form>
+    </div>   
 </body>
 </html>
