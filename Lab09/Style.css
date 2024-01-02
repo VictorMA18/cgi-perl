@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@100&display=swap');
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family:'Poppins', sans-serif;
+}
+html {
+    background: linear-gradient(320deg, #4924af, #3655bb, #3cabbe);
+    margin: 0;
+    height: 200%;
+}
+.nombre{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 2% 5%;
+    background: linear-gradient(320deg, #eeda82, #d5f8c4, #d1fdf2);
+    border-radius: 5%;
+}
+.nombre h4{
+    margin: 10px;
+    padding: 25px;
+    font-size: 40px;
+    color: rgba(26, 240, 44, 0.822);
+    text-align: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 500px;
+}
+.tipos{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 90%;
+    margin: 2% 5%;
+    text-align: center;
+}
+.opciones{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.numero2{
+    display: flex;
+    justify-content: center;
+    margin: 2% 5%;
+    width: 19%;
+}
+.buscar{
+    margin: 8px 0 8px 0;
+    padding: 9px;
+    font-size: 17px;
+    border: 0;
+    color: #680de0;
+    height: 60px;
+    width: 120px;
+    border-radius: 3%;
+    background: linear-gradient(320deg, #e77f2a, #ffef78, #d13434);
+}
+.buscar:hover{
+    background: linear-gradient(320deg, #eb9d5e, #e0d685, #df6969);
+}
