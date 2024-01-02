@@ -5,6 +5,8 @@ use warnings;
 open(IN, "ProgramasdeUniversidades.csv") or die("Error al abrir el archivo");
 my @line = <IN>;
 close(IN);
+
+
 my $count = 0;
 my $etiquetas = cabecera(@line);
 my $datos = cabecerasclasificadas($etiquetas);

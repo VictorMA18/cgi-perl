@@ -11,35 +11,37 @@
         <h4>Lab09 - Ejemplo Unificado y Archivo de Universidades Licenciadas - Mamani Anahua Victor</h4>
     </div>
     <main>
-        <div class="tipos">
-            <b>Nombre Universidad:</b>
-                <div class="opciones">
-                    <label for="universidad"></label>
-                    <br>
-                    <input type="text" name="universidad" class="numero2">
-                </div>
-            <b>Periodo Licenciamiento:</b>
-                <div class="opciones">
-                    <label for="licenciamiento"></label>
-                    <br>
-                    <input type="text" name="licenciamiento" class="numero2">
-                </div>
-            <b>Departamento Local:</b>
-                <div class="opciones">
-                    <label for="local"></label>
-                    <br>
-                    <input type="text" name="local" class="numero2">
-                </div>
-            <b>Denominación Programa:</b>
-                <div class="opciones">
-                    <label for="programa"></label>
-                    <br>
-                    <input type="text" name="programa" class="numero2">
-                </div>
-        </div>
-        <div class="opciones">
-            <input class= "buscar" type="submit" value="Buscar"> 
-        </div>
+        <form method="post" action="/cgi-bin/universidad.cgi">
+            <div class="tipos">
+                <b>Nombre Universidad:</b>
+                    <div class="opciones">
+                        <label for="universidad"></label>
+                        <br>
+                        <input type="text" name="universidad" class="numero2">
+                    </div>
+                <b>Periodo Licenciamiento:</b>
+                    <div class="opciones">
+                        <label for="licenciamiento"></label>
+                        <br>
+                        <input type="text" name="licenciamiento" class="numero2">
+                    </div>
+                <b>Departamento Local:</b>
+                    <div class="opciones">
+                        <label for="local"></label>
+                        <br>
+                        <input type="text" name="local" class="numero2">
+                    </div>
+                <b>Denominación Programa:</b>
+                    <div class="opciones">
+                        <label for="programa"></label>
+                        <br>
+                        <input type="text" name="programa" class="numero2">
+                    </div>
+            </div>
+            <div class="opciones">
+                <input class= "buscar" type="submit" value="Buscar"> 
+            </div>
+        </form>
     </main>
 </body>
 </html>

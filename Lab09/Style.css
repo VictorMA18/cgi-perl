@@ -32,6 +32,9 @@ main{
     text-align: center;
     height: 500px;
 }
+form{
+    margin-top: 6%;
+}
 .tipos{
     display: flex;
     flex-direction: column;
