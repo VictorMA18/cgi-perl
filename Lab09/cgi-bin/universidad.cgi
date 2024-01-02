@@ -7,7 +7,16 @@ my @line = <IN>;
 close(IN);
 my $count = 0;
 my $etiquetas = cabecera(@line);
-my $datos = cabecerasclasificadas();
+my $datos = cabecerasclasificadas($etiquetas);
+my $longitud = @line;
+for(my $i= 0; $i < $longitud; $i++){
+   if($line[$i] =~ /$datos/){
+      my $denom_programa = $17;
+      if($11 eq "AREQUIPA"){
+         print "$2: $denom_programa\n"; 
+      }
+   }
+}
 if($line[1] =~ /$datos/){
    print $1."\n";
    print $22."\n";
@@ -25,8 +34,9 @@ sub cabecera{
    return $count;
 }
 sub cabecerasclasificadas{
+   my $length = $_[0];
    my $agrupaciones = "^";
-   for(my $i = 0; $i < 22; $i++){
+   for(my $i = 0; $i < $_[0]; $i++){
       $agrupaciones .= '([^\|]+)\|';
    }
    $agrupaciones .= '([^\|]+)';
