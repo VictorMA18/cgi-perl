@@ -1,9 +1,11 @@
 #!/usr/bin/perl
 use strict;
+use Encode;
 use warnings;
 use CGI;
 
 my $cgi = new CGI;
+$cgi->charset("UTF-8");
 my $universidad = $cgi->param('universidad');
 my $perlicenciamiento = $cgi->param('licenciamiento');
 my $departalocal = $cgi->param('local');
@@ -17,26 +19,21 @@ close(IN);
 my $etiquetas = cabecera(@line);
 my $datos = cabecerasclasificadas($etiquetas);
 my $longitud = @line;
-my @universi;
+my @licencia;
 #print("LOngitud: ".$longitud."\n");
 sub universidadResol{
    my $count = 0;
    my $name = $_[0];
    for(my $i= 0; $i <= $longitud; $i++){
       if($line[$i + 1] =~ /$datos/){
-         if($2 eq $name){
-            $universi[$count] = $line[$i + 1];
+         if($2 =~ /$name/){
+            $licencia[$count] = $line[$i + 1];
             $count++;
          } 
       }
    }
-   if($count > 0){
-      return @universi;
-   }else{
-      return @line;
-   }
+   return @licencia;
 }
-my @licencia;
 sub licenciamientoResol{
    my $count = 0;
    my $name = $_[0];
@@ -48,65 +45,33 @@ sub licenciamientoResol{
          } 
       }
    }
-   if($count > 0){
-      return @licencia;
-   }else{
-      return @line
-   } 
+   return @licencia;
 }
-my @departamento;
 sub departamentoResol{
    my $count = 0;
    my $name = $_[0];
    for(my $i= 0; $i <= $longitud; $i++){
       if($line[$i + 1] =~ /$datos/){
          if($11 eq $name){
-            $departamento[$count] = $line[$i + 1];
+            $licencia[$count] = $line[$i + 1];
             $count++;
          } 
       }
    }
-   if($count > 0){
-      return @departamento;
-   }else{   
-      return @line;
-   }
+   return @licencia;
 }
-my @programa;
 sub programaResol{
    my $count = 0;
    my $name = $_[0];
    for(my $i= 0; $i <= $longitud; $i++){
       if($line[$i + 1] =~ /$datos/){
-         if($17 eq $name){
-            $programa[$count] = $line[$i + 1];
+         if($17 =~ /$name/){
+            $licencia[$count] = $line[$i + 1];
             $count++;
          } 
       }
    }
-   if($count > 0){
-      return @programa;
-   }else{
-      return @line;
-   }
-}
-sub diferencia_de_arrays{
-    my @arrays = @_;
-    my %hash;
-    my @diferencia;
-    # Convertir cada array en un hash
-    foreach my $array (@arrays) {
-        foreach my $element (@$array) {
-            $hash{$element}++;
-        }
-    }
-    # Encontrar los elementos que aparecen solo en uno de los arrays
-    foreach my $element (keys %hash) {
-        if ($hash{$element} == 4) {
-            push @diferencia, $element;
-        }
-    }
-    return @diferencia;
+   return @licencia;
 }
 #if($line[1] =~ /$datos/){
    #print $1."\n";
@@ -134,13 +99,28 @@ sub cabecerasclasificadas{
    $agrupaciones .= '([^\|]+)';
    return $agrupaciones;
 }
-my @hola = universidadResol($universidad);
-my @hola2 = licenciamientoResol($perlicenciamiento);
-my @hola3 = departamentoResol($departalocal);
-my @hola4 = programaResol($denomprograma);
+universidadResol($universidad);
+licenciamientoResol($perlicenciamiento);
+departamentoResol($departalocal);
+programaResol($denomprograma);
 
-my @union = map { $_ } @hola, @hola2, @hola3, @hola4;
-my @interseccion = diferencia_de_arrays(\@hola, \@hola2, \@hola3, \@hola4);
+sub matcher {
+  my $results = "";
+  foreach my $line (@_) {
+    chomp($line);
+    my @params = split(/\|/, $line);
+    $results .= makeRow(@params); 
+  }
+  return $results;
+}
+sub makeRow {
+  my $row = "<tr>\n";
+  foreach my $data (@_) { $row .= "<td>$data</td>\n"; }
+  $row .= "</tr>\n";
+  return $row;
+}
+my $rows = matcher(@licencia);
+$rows = encode('utf-8', $rows);
 print "Content-type: text/html\n\n";
 print <<HTML;
 <!DOCTYPE html>
@@ -149,22 +129,45 @@ print <<HTML;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador</title>
-    <link rel="stylesheet" type="text/css" href="Style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-    <div class="nombre">
-        <h4>Lab09 - Ejemplo Unificado y Archivo de Universidades Licenciadas - Mamani Anahua Victor</h4>
-    </div>
-    <main>
+   <div class="opciones">
+      <button class="buscar" onclick="window.history.back()">Volver a la sección anterior</button> 
+   </div>
+   <table class="resultados">
+      <tr>
+        <th>CODIGO ENTIDAD</th>
+        <th>NOMBRE</th>
+        <th>TIPO GESTION</th>
+        <th>ESTADO LICENCIAMIENTO</th>
+        <th>PERIODO LICENCIAMIENTO</th>
+        <th>CODIGO FILIAL</th>
+        <th>NOMBRE FILIAL</th>
+        <th>DEPARTAMENTO FILIAL</th>
+        <th>PROVINCIA FILIAL</th>
+        <th>CODIGO LOCAL</th>
+        <th>DEPARTAMENTO LOCAL</th>
+        <th>PROVINCIA LOCAL</th>
+        <th>DISTRITO LOCAL</th>
+        <th>LATITUD UBICACION</th>
+        <th>LONGITUD UBICACION</th>
+        <th>TIPO AUTORIZACION LOCAL</th>
+        <th>DENOMINACION PROGRAMA</th>
+        <th>TIPO NIVEL ACADEMICO</th>
+        <th>NIVEL ACADEMICO</th>
+        <th>CODIGO CLASE PROGRAMA N2</th>
+        <th>NOMBRE CLASE PROGRAMA N2</th>
+        <th>TIPO AUTORIZACION PROGRAMA</th>
+        <th>TIPO AUTORIZACION PROGRAMA LOCAL</th>
+      </tr>
+      <tr>
 HTML
-print("<p> EL resultado de universidades es: ".@hola." </p>\n");
-print("<p> EL resultado de licencias es: ".scalar(@hola2)." </p>\n");
-print("<p> EL resultado de licencias es: ".scalar(@hola3)." </p>\n");
-print("<p> EL resultado de licencias es: ".scalar(@hola4)." </p>\n");
-print("<p> EL resultado de licencias es: ".scalar(@interseccion)." </p>\n");
-print("<p> EL resultado de licencias es: $interseccion[1] </p>\n");
+print($rows);
 print<<HTML;
-   </main>
-</body>
+      </tr>
+    </table>
+
+  </body>
 </html>
 HTML

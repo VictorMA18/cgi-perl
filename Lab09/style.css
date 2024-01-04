@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@100&display=swap');
+body {
+  background: linear-gradient(320deg, #4924af, #3655bb, #3cabbe);
+  height: 100vh;
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: bold;
+}
+.opciones{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.buscar{
+    margin: 8px 0 8px 0;
+    padding: 9px;
+    font-size: 17px;
+    border: 0;
+    color: #680de0;
+    height: 60px;
+    width: 300px;
+    border-radius: 3%;
+    background: linear-gradient(320deg, #e77f2a, #ffef78, #d13434);
+}
+.buscar:hover{
+    background: linear-gradient(320deg, #eb9d5e, #e0d685, #df6969);
+}
+.resultados {
+  background-color: #ffff;
+  border-collapse: collapse;
+  margin: 10px;
+}
+.resultados td, .resultados th {
+  border: 10px solid red;
+  padding: 5px;
+  max-width: 200px;
+  word-wrap: break-word;
+}
+.resultados th {
+  background-color: #e06806;
+  color: black;
+  font-size: 23px;
+}
+
+tr{
+   font-size:23px
+}
