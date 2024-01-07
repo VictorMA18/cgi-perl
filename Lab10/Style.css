@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@100&display=swap');
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family:'Poppins', sans-serif;
+}
+html {
+    background: linear-gradient(320deg, #6c53b1, #e4aa54, #3cabbe);
+    margin: 0;
+    height: 120%;
+}
+.nombre{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 2% 5%;
+    background: linear-gradient(320deg, #eeda82, #d5f8c4, #d1fdf2);
+    border-radius: 5%;
+}
+.nombre h4{
+    margin: 10px;
+    padding: 25px;
+    font-size: 40px;
+    color: rgba(243, 68, 15, 0.822);
+    text-align: center;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 500px;
+}
+.tipos{
+    display: flex;
+    flex-direction: column;
+    height: 750px;
+    width: 90%;
+    margin: 2% 5%;
+    padding-top: 8%;
+    text-align: center;
+}
+form{
+    margin-top: 3%;
+}
+b{
+    margin: 20px;
+}
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    background: linear-gradient(320deg, #b1ec27, #26f048, #e2df2f);
+    width: 20%;
+    height: 50%;
+}
+a:hover{
+    background: linear-gradient(320deg, #aecc69, #6bc97c, #dfdd8f);
+}
+.opciones {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.numero2{
+    display: flex;
+    justify-content: center;
+    padding: 9px;
+    margin: 2% 5%;
+    width: 19%;
+}
+.buscar{
+    margin: 8px 0 8px 0;
+    padding: 9px;
+    font-size: 17px;
+    border: 0;
+    color: #680de0;
+    height: 60px;
+    width: 120px;
+    border-radius: 3%;
+    background: linear-gradient(320deg, #b1ec27, #26f048, #e2df2f);
+}
+.buscar:hover{
+    background: linear-gradient(320deg, #aecc69, #6bc97c, #dfdd8f);
+}
