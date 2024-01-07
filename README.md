@@ -1,3 +1,3 @@
-# tarea-cgi-perl
-En esta tarea se implementa una calculadora usando cgi en perl, html y css
+# tareas con cgi-perl
+En esta tarea se subiran los laboratorios que necesiten de cgi perl
 Victor Mamani Anahua
